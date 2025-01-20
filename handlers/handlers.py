@@ -160,7 +160,7 @@ async def add_command(message: types.Message):
             await message.reply("У Вас нет токена, используйте команду /token")
             return
 
-        new_folder = YandexDiskFolder(teacher_id=user.id, path=folder_path)
+        new_folder = YandexDiskFolder(teacher_id=user.user_id, path=folder_path)
         session.add(new_folder)
         await session.commit()
 
